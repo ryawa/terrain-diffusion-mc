@@ -17,6 +17,7 @@ public final class TerrainDiffusionConfig {
     private static final boolean DEFAULT_OFFLOAD_MODELS = true;
     private static final boolean DEFAULT_VALIDATE_MODEL = true;
     private static final int DEFAULT_EXPLORER_PORT = 19801;
+    private static final String DEFAULT_EXPLORER_ADDRESS = "127.0.0.1";
     private static final int DEFAULT_TILE_SIZE = 256;
     private static final int DEFAULT_WORLD_SCALE = 2;
 
@@ -50,6 +51,11 @@ public final class TerrainDiffusionConfig {
     /** TCP port for the local terrain explorer HTTP server. */
     public static int explorerPort() {
         return readInt("explorer.port", DEFAULT_EXPLORER_PORT);
+    }
+
+    /** Listening address for the local terrain explorer HTTP server. */
+    public static String explorerAddress() {
+        return readString("explorer.address", DEFAULT_EXPLORER_ADDRESS);
     }
 
     /** Whether to validate SHA-256 for pre-existing local model files before use. */
